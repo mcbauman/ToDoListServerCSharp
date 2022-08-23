@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ToDoList.Data;
 using ToDoList.Domain;
+using ToDoList.security;
 
 namespace ToDoList.Controllers;
 [ApiController]
@@ -8,37 +10,31 @@ namespace ToDoList.Controllers;
 public class UserController : ControllerBase
 {
     private readonly ApplicationDbContext _context;
-
-    public UserController(ApplicationDbContext context)
+    private readonly PasswordHandler _hashPassword;
+    private readonly IConfiguration _configuration;
+    private readonly token _token;
+    public UserController(ApplicationDbContext context,PasswordHandler hashPassword,IConfiguration configuration, token token)
     {
         _context = context;
+        _hashPassword = hashPassword;
+        _configuration = configuration;
+        _token = token;
     }
 
-    [HttpGet]
-    public IActionResult GetAll()
-    {
-        return Ok(_context.Users);
-    }
-
-    // GET login?name=name&password=password
-    [HttpGet("/login")]
-    public IActionResult Get([FromQuery] loginReqClass reqQuery)
-    {
-        return Ok(reqQuery);
-    }
     
-    [HttpGet("/signin")]
-    public IActionResult Search(string name,string password )
+    [HttpPost("/login")]
+    public async Task<IActionResult> Login([FromBody] loginReqClass reqBody)
     {
         try
         {
-            UserClass currentUser = _context.Users.FirstOrDefault(x => x.Name == name);
-            if (currentUser.Password == password)
+            UserClass currentUser = await _context.Users.FirstAsync(x => x.Name == reqBody.Name);
+            if(_hashPassword.PasswordMatch(reqBody.Password,currentUser.Password))
             {
-                Console.WriteLine("Incomming Request");
-                return Ok(currentUser.Id);
+                string token = _token.CreateToken(currentUser);
+                return Ok(token);
             }
-            return Ok("Password missmatch");
+            return Ok("Wrong Login Data");
+            //return BadRequest("Wrong  LoginData");
         }
         catch (Exception e)
         {
@@ -46,15 +42,20 @@ public class UserController : ControllerBase
             throw;
         }
     }
+    
 
-//ID should be created by the Backend, also remove id in FrontEnd/CreateUser Line 14!
+    //_config über Params übergeben
+
+
     [HttpPost("create")]
     public async Task<IActionResult> Post([FromBody] UserClass reqBody)
     {
+        reqBody.Password = _hashPassword.HashPassword(reqBody.Password);
         _context.Users.Add(reqBody);
         await _context.SaveChangesAsync();
         UserClass currentUser = _context.Users.FirstOrDefault(x => x.Name == reqBody.Name);
-        return Ok(currentUser.Id);
+        string token = _token.CreateToken(currentUser);
+        return Ok(token);
     }
 }
 // public string Get(int id)
@@ -77,3 +78,17 @@ public class UserController : ControllerBase
 //     return Ok(_context.User);
 // }
 //
+
+
+// [HttpGet]
+// public IActionResult GetAll()
+// {
+//     return Ok(_context.Users);
+// }
+//
+// // GET login?name=name&password=password
+// [HttpGet("/login")]
+// public IActionResult Get([FromQuery] loginReqClass reqQuery)
+// {
+//     return Ok(reqQuery);
+// }

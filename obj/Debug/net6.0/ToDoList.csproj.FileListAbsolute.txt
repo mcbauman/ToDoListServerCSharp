@@ -34,3 +34,17 @@
 /Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/matthias.baumann/learningCS/ToDoList/ToDoList/obj/Debug/net6.0/ToDoList.MvcApplicationPartsAssemblyInfo.cs
+/Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/BCrypt.Net-Core.dll
+/Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/JWT.dll
+/Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/JWT.Extensions.AspNetCore.dll
+/Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/JWT.Extensions.DependencyInjection.dll
+/Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/System.Security.Permissions.dll
+/Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/System.Text.Json.dll
+/Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+/Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/Users/matthias.baumann/learningCS/ToDoList/ToDoList/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

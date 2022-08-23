@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/matthias.baumann/Desktop/ToDoList/ToDoList/ToDoList.csproj": {}
+    "/Users/matthias.baumann/learningCS/ToDoList/ToDoList/ToDoList.csproj": {}
   },
   "projects": {
-    "/Users/matthias.baumann/Desktop/ToDoList/ToDoList/ToDoList.csproj": {
+    "/Users/matthias.baumann/learningCS/ToDoList/ToDoList/ToDoList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/matthias.baumann/Desktop/ToDoList/ToDoList/ToDoList.csproj",
+        "projectUniqueName": "/Users/matthias.baumann/learningCS/ToDoList/ToDoList/ToDoList.csproj",
         "projectName": "ToDoList",
-        "projectPath": "/Users/matthias.baumann/Desktop/ToDoList/ToDoList/ToDoList.csproj",
+        "projectPath": "/Users/matthias.baumann/learningCS/ToDoList/ToDoList/ToDoList.csproj",
         "packagesPath": "/Users/matthias.baumann/.nuget/packages/",
-        "outputPath": "/Users/matthias.baumann/Desktop/ToDoList/ToDoList/obj/",
+        "outputPath": "/Users/matthias.baumann/learningCS/ToDoList/ToDoList/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/matthias.baumann/.nuget/NuGet/NuGet.Config"
@@ -38,15 +38,39 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "BCrypt.Net-Core": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "JWT": {
+              "target": "Package",
+              "version": "[10.0.0-beta6, )"
+            },
+            "JWT.Extensions.AspNetCore": {
+              "target": "Package",
+              "version": "[10.0.0-beta3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.6, )"
             },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.22.0, )"
+            },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[6.0.6, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
             },
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
@@ -59,6 +83,14 @@
             "Swashbuckle.AspNetCore.SwaggerUI": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.22.0, )"
+            },
+            "System.Security.Cryptography.Algorithms": {
+              "target": "Package",
+              "version": "[4.3.1, )"
             }
           },
           "imports": [
